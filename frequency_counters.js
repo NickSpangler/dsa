@@ -17,10 +17,20 @@ function same(arr1, arr2) {
             obj1[arr1[i]] = ++obj1[arr1[i]] || 1
             obj2[arr2[i]] = ++obj2[arr2[i]] || 1
          }
-         for (const key in obj1.keys) {
-            
+         for (const key of Object.keys(obj1)) {
+            if (obj1[key] !== obj2[key*key]) {
+                console.log('false')
+                return false
+            }
          }
     } else {
+        console.log('false')
         return false
     }
+    console.log('true')
+    return true
 }
+
+same([1, 2, 3], [4,1,9])
+same([1, 2, 3], [1, 9])
+same([1, 2, 1], [4, 4, 1])
