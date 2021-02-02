@@ -5,12 +5,14 @@ function isAnagram(string1, string2) {
     }
     let object1 = {}
     let object2 = {}
-    for (let char in string1) {
+    for (let char of string1) {
         object1[char] = ++object1[char] || 1
     }
-    for (let char in string2) {
+    for (let char of string2) {
         object2[char] = ++object2[char] || 1
     }
+    console.log(object1)
+    console.log(object2)
     for (let key in object1) {
         if (object1[key] !== object2[key]) {
             console.log("false")
