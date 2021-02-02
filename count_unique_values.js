@@ -3,31 +3,21 @@
 // the array, but it will always be sorted
 
 function countUniqueValues(arr) {
-    counter = 0
+    if (arr.length === 0) return 0
     let left = 0;
     let right = 1;
     while (right < arr.length) {
-        //start with first and second value
-        // compare
-        //if left does not equal right 
-            //increment counter
-            //make left equal right
-            //increment right
-        //if left does equal right
-            //increment right until it does not equal left
-            //make left equal right, and increment right
-
-        if (arr[left] !== arr[right]) {
-            counter++
-            left = right
+        if (arr[left] === arr[right]) {
             right++
         } else {
-            while (arr[left] === arr[right]) {
-                right++
-            }
-            left = right
+            left++
+            arr[left] = arr[right]
             right++
         }
     }
-    return counter
+    console.log(left + 1)
+    return left + 1
 }
+
+countUniqueValues([1,1,1,1,1,1,2])
+countUniqueValues([1,1,1,2,3,3,4,4,5,6])
