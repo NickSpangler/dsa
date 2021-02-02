@@ -21,3 +21,10 @@ function isAnagram(string1, string2) {
     return true
 }
 
+isAnagram('', '')
+isAnagram('aaz','zza')
+isAnagram('anagram', 'nagaram')
+isAnagram('rat', 'car')
+isAnagram('awesome', 'awesom')
+isAnagram('qwerty','qeywrt')
+isAnagram('texttwisttime','timetwisttext')
