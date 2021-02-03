@@ -6,3 +6,7 @@
 
 //Useful for keeping traack of a subset of data in an array or string.
 
+//EXAMPLE
+//maxSubarraySum - accepts an array of integers and a number, n, and returns the maximum
+//sum of n consecutive numbers in the array
+
