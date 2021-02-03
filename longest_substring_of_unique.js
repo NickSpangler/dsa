@@ -4,10 +4,13 @@
 function uniqueSubstring(string) {
     if (string.length === 0) return null;
     let maxSub = 1
-    let tempSub = 1
-    let subString = string[0]
+    let left = 0
+    let right = 1
     for (let i = 1; i < string.length; i++) {
-
+        if (string.slice(left, i).contains(string[i])) {
+            maxSub = Math.max(maxSub, string.slice(left, i))
+            left++
+        }
     }
     return maxSub;
 }
