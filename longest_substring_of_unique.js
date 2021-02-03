@@ -19,4 +19,21 @@
 //     return maxSub;
 // }
 
-uniqueSubstring('tnenent')
+function uniqueSubstring(string) {
+    let left = 0, right = 0, max = 0, charSet = new Set()
+    while (right < string.length) {
+        console.log(charSet)
+        if (!charSet.has(string.charAt(right))) {
+            charSet.add(string.charAt(right))
+            right++
+            max = Math.max(charSet.size, max)
+        } else {
+            charSet.delete(string.charAt(left))
+            left++
+        }
+    }
+    console.log(max)
+    return max
+}
+
+uniqueSubstring('aabcdabbcde')
