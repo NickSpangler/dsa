@@ -1,6 +1,8 @@
 //Given an array of integers and a number, write a function called maxSubarraySum which finds the maximum sum
 //of a subarray with the length of the number passed in to the function
 
+//USE A SLIDING WINDOW
+
 function maxSubarraySum(array, num) {
     if (array.length < num) return null;
     let max = -Infinity
