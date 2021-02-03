@@ -10,16 +10,15 @@ function isSubsequence(sub, string) {
     if (sub.length > string.length) return false
     let subPointer = 0, stringPointer = 0
     while (stringPointer < string.length) {
-        console.log(subPointer)
+        console.log(subPointer, sub.length)
         if (sub[subPointer] === string[stringPointer]) {
             subPointer++
             stringPointer++
-            if (subPointer === sub.length - 1) {
+            if (subPointer === (sub.length)) {
+                console.log(subPointer, sub.length - 1)
                 console.log('true')
                 return true
             }
-        } else if (subPointer !== 0) {
-            subPointer = 0
         } else {
             stringPointer++
         }
