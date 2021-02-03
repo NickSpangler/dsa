@@ -15,3 +15,15 @@
  }
 
  countDown(10)
+
+ //A second example
+
+ function sumRange(num) {
+     //THIS IS THE BASE CASE
+     if (num === 1) return 1;
+     //RECURSIVE CALL, CALLED WITH NUM - 1 EACH TIME
+     return num + sumRange(num - 1)
+ }
+
+ sumRange(5);
+ 
