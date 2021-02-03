@@ -18,3 +18,9 @@ function areThereDuplicates() {
    }
 
 areThereDuplicates(1,2,3,1)
+
+//BETTER ONE-LINE SOLUTION
+//makes a set from arguments, compares sizes. Same size means all unique values
+function areThereDups() {
+    return new Set(arguments) !== arguments.length
+}
