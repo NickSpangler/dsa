@@ -3,6 +3,7 @@
 //This should mimic Math.pow() - do not worry about negative bases and exponents
 
 function power(base, exponent) {
+    if (exponent === 0) return 1;
     let total = base
     console.log(`Total = ${total}`)
     function recursiveHelper(exp) {
