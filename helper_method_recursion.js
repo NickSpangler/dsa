@@ -9,3 +9,15 @@
 //4) CALL inner function with original input
 //5) Return results
 
+function collectOddNumbers(arr) {
+    let odds = []
+    function getOdds(array) {
+        if (array.length === 0) return
+        if (array[0] % 2 !== 0) {
+            odds.push(array[0])
+        }
+        getOdds(array.slice(1))
+    }
+    getOdds(arr)
+    return odds;
+}
