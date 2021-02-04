@@ -12,11 +12,11 @@ iterativeFactorial(3)
 iterativeFactorial(4)
 iterativeFactorial(5)
 
+//Writing factorial recursively
+
 function recursiveFactorial(num) {
-    if (num === 1) return 1;
-    let total = num
-    total *= recursiveFactorial(num - 1)
-    console.log(total)
+    if (num === 1) return 1
+    return num * recursiveFactorial(num - 1)
 }
 
 recursiveFactorial(3)
