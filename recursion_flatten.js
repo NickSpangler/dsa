@@ -3,12 +3,12 @@
 //COULD NOT SOLVE
 
 function flatten(arr) {
-    let newArr = []
-    for (let i = 0; i < arr.length; i++) {
-        if (Array.isArray(arr[i])) {
-            newArr = newArr.concat(flatten(arr[i]))
-        } else {
-            newArr.push(arr[i])
+    let newArr = [] //define empty array
+    for (let i = 0; i < arr.length; i++) {//loop through array
+        if (Array.isArray(arr[i])) {//if an element IS itself an array
+            newArr = newArr.concat(flatten(arr[i]))//concat the empty array with the return value of this function called on that array
+        } else {//if the element is NOT an arraay
+            newArr.push(arr[i])//push it into the newArray
         }
     }
     return newArr;
