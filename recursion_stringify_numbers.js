@@ -2,8 +2,28 @@
 
 //use recursion
 
+// function stringifyNumbers(obj) {
+//     let newObj = Object.assign({}, obj)
+//     console.log(`This is my current object: ${newObj}`)
+//     for (let key in newObj) {
+//         console.log(`I am now looking at key ${key}`)
+//         if (typeof newObj[key] === 'number') {
+//             console.log(`I'm looking at the number ${newObj[key]}`)
+//             newObj = Object.assign({}, newObj, {[key]: newObj[key].toString()})
+//         } else if (isObject(newObj[key])) {
+//             console.log(`I made it into ${key}`)
+//             newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])} )
+//             // newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])})
+//         }
+//     }
+//     console.log(newObj)
+// }
+
+
+
+
 function stringifyNumbers(obj) {
-    let newObj = Object.assign({}, obj)
+    let newObj = {...obj}
     console.log(`This is my current object: ${newObj}`)
     for (let key in newObj) {
         console.log(`I am now looking at key ${key}`)
@@ -12,11 +32,12 @@ function stringifyNumbers(obj) {
             newObj = Object.assign({}, newObj, {[key]: newObj[key].toString()})
         } else if (isObject(newObj[key])) {
             console.log(`I made it into ${key}`)
-            newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])} )
+            newObj = {...newObj, [key]: stringifyNumbers(newObj[key])}
             // newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])})
         }
     }
     console.log(newObj)
+    return newObj
 }
 
 function isObject(val) {
@@ -31,4 +52,4 @@ function isObject(val) {
     //if Obj[key] is an object, call stringifyNumbers(Obj[key])
 //return new obj
 
-stringifyNumbers({hello: 'hello', four: 4, fourString: 'four', nestedObject: {nestedThree: 3}})
+stringifyNumbers({hello: 'hello', four: 4, fourString: 'four', nestedObject: {nestedThree: 3, secondNested: {number: 1}}})
