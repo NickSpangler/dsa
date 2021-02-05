@@ -2,41 +2,29 @@
 
 //use recursion
 
-// function stringifyNumbers(obj) {
-//     let newObj = Object.assign({}, obj)
-//     console.log(`This is my current object: ${newObj}`)
-//     for (let key in newObj) {
-//         console.log(`I am now looking at key ${key}`)
-//         if (typeof newObj[key] === 'number') {
-//             console.log(`I'm looking at the number ${newObj[key]}`)
-//             newObj = Object.assign({}, newObj, {[key]: newObj[key].toString()})
-//         } else if (isObject(newObj[key])) {
-//             console.log(`I made it into ${key}`)
-//             newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])} )
-//             // newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])})
-//         }
-//     }
-//     console.log(newObj)
-// }
-
-
-
-
+//THIS SOLUTION USES OBJECT.ASSIGN, AS COURSE WOULD NOT LET ME USE SPREAD OPERATOR
 function stringifyNumbers(obj) {
-    let newObj = {...obj}
-    console.log(`This is my current object: ${newObj}`)
+    let newObj = Object.assign({}, obj)
     for (let key in newObj) {
-        console.log(`I am now looking at key ${key}`)
         if (typeof newObj[key] === 'number') {
-            console.log(`I'm looking at the number ${newObj[key]}`)
             newObj = Object.assign({}, newObj, {[key]: newObj[key].toString()})
         } else if (isObject(newObj[key])) {
-            console.log(`I made it into ${key}`)
-            newObj = {...newObj, [key]: stringifyNumbers(newObj[key])}
-            // newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])})
+            newObj = Object.assign({}, newObj, {[key]: stringifyNumbers(newObj[key])})
         }
     }
-    console.log(newObj)
+    return newObj
+}
+
+//THIS SOLUTION USES SPREAD OPERATOR
+function stringifyNumbers(obj) {
+    let newObj = {...obj}
+    for (let key in newObj) {
+        if (typeof newObj[key] === 'number') {
+            newObj = Object.assign({}, newObj, {[key]: newObj[key].toString()})
+        } else if (isObject(newObj[key])) {
+            newObj = {...newObj, [key]: stringifyNumbers(newObj[key])}
+        }
+    }
     return newObj
 }
 
