@@ -3,5 +3,3 @@
 function nestedEvenSum(obj) {
 
 }
-
-//
