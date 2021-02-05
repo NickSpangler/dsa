@@ -9,16 +9,18 @@
 function binarySearch(arr, target) {
     let left = 0
     let right = arr.length - 1
-    let mid = Math.floor((right - left) / 2)
-    while (arr[mid] !== target) {
+    let mid = Math.floor((right + left) / 2)
+    while (arr[mid] !== target && left <= right) {
         if (arr[mid] > target) {
             right = mid - 1
-            mid = Math.floor((right - left) / 2)
         } else {
             left = mid + 1
-            mid = Math.floor((right - left) / 2)
+            
+        }
+        mid = Math.floor((right + left) / 2)
     }
-    return middle
+    if (arr[mid] === target) return mid
+    return - 1
 }
 
 binarySearch([1,2,3,4,5], 2)
