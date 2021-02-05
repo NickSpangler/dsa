@@ -1,5 +1,7 @@
 //write capitalizeWords, which takes an array of words and returns a new array with each of the words in all capitals
 
+//NOTES: Don't forget to RETURN the recursive call
+
 function capitalizeWords(arr) {
     if (arr.length === 0) return arr;
     let newArr = []
