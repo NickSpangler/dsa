@@ -18,8 +18,7 @@ function naiveStringSearch(longString, shortString) {
             if (j === shortString.length - 1) count++
         }
     }
-    console.log(count)
     return count
 }
 
-naiveStringSearch('wowomgzomgomg', 'omg')
+console.log(naiveStringSearch('wowomgzomgomg', 'omg'))
