@@ -9,17 +9,13 @@ function selectionSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         let min = arr[i]
         let minIndex = i
-        console.log(minIndex)
         for (let j = i; j < arr.length; j++ ) {
-            console.log(`comparing index ${j} to index ${minIndex}`)
             if (arr[j] < min) {
                 console.log(`SETTING minIndex to ${j}`)
                 min = arr[j]
                 minIndex = j
             }
         }
-        console.log(`${minIndex} is not ${i} so imma swap em `)
-        console.log(`what is this value? ${arr[i]}`)
         if (minIndex !== i) [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
     }
     return arr
