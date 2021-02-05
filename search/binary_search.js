@@ -19,3 +19,14 @@ function binarySearch(arr, target) {
 }
 
 binarySearch([1,2,3,4,5], 2)
+
+//JUST TO WRITE IT A SECOND TIME
+function binarySearch(arr, target) {
+    let left = 0, right = arr.length - 1, mid = Math.floor((left + right)/2)
+    while(arr[mid] !== target && left <= right) {
+        if (arr[mid] < target) left = mid + 1
+        else right = mid - 1
+        mid = Math.floor((left + right)/2)
+    }
+    return arr[mid] === target ? mid : -1 
+}
