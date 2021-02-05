@@ -1,18 +1,16 @@
 //write collectStrings, which accepts an object and returns an array of all the values in the object that have a typeof string
 
+//I was very close when I hit my snag
+//Remember to SET THE VALUE OF ARR = ARR.CONCAT(WHATEVER)
+//I was calling .concat() but not saving it to the variable
 function collectStrings(obj) {
     let arr = []
     for (let key in obj) {
-        console.log(obj[key])
         if (typeof obj[key] === 'string') arr.push(obj[key])
         if (isObject(obj[key])) {
-            console.log(`return value i'm tring to concat: ${collectStrings(obj[key])}`)
-            console.log(`return value is a ${typeof collectStrings(obj[key])}`)
             arr = arr.concat(collectStrings(obj[key]))
-            console.log(`this is the array in the if: ${arr}`)
         }
     }
-    console.log(arr)
     return arr
 }
 
