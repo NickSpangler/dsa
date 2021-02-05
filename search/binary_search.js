@@ -11,9 +11,22 @@ function binarySearch(arr, target) {
     let right = arr.length - 1
     while (left < right) {
         let mid = Math.floor((right - left) / 2)
-        if (arr[mid] === target) return mid;
+        console.log(mid, arr[mid])
+        if (arr[mid] === target) {
+            console.log(`i found it at index ${mid}`)
+            return mid;
+        }
         if (arr[mid] > target) {
-            right = mid - 1
+            right = mid
+            console.log('Too Big')
+            console.log(`Right is now ${right}`)
+        } else {
+            left = mid + 1
+            console.log('Too Small')
+            console.log(`Left is now ${left}`)
         }
     }
+    return - 1
 }
+
+binarySearch([1,2,3,4,5], 2)
