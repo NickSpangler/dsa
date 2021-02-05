@@ -9,24 +9,16 @@
 function binarySearch(arr, target) {
     let left = 0
     let right = arr.length - 1
-    while (left < right) {
-        let mid = Math.floor((right - left) / 2)
-        console.log(mid, arr[mid])
-        if (arr[mid] === target) {
-            console.log(`i found it at index ${mid}`)
-            return mid;
-        }
+    let mid = Math.floor((right - left) / 2)
+    while (arr[mid] !== target) {
         if (arr[mid] > target) {
-            right = mid
-            console.log('Too Big')
-            console.log(`Right is now ${right}`)
+            right = mid - 1
+            mid = Math.floor((right - left) / 2)
         } else {
             left = mid + 1
-            console.log('Too Small')
-            console.log(`Left is now ${left}`)
-        }
+            mid = Math.floor((right - left) / 2)
     }
-    return - 1
+    return middle
 }
 
 binarySearch([1,2,3,4,5], 2)
