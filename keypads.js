@@ -35,27 +35,27 @@
 // }
 
 //CLEAN VERSION, NO COMMENTS OR LOGS
-// function numKeypadSolutions(wordlist, keypads) {
-//     let results = []
-//     for (let keypad of keypads) {
-//         let obj = {}
-//         let validWords = 0
-//         let keyLetter = keypad[0]
-//         for (let letter of keypad) {
-//             obj[letter] = true
-//         }
-//         for (let word of wordlist) {
-//             let includesKey = false
-//             for (let i = 0; i < word.length; i++) {
-//                 if (!obj[word[i]]) break;
-//                 if (word[i] === keyLetter) includesKey = true;
-//                 if (i === word.length - 1 && includesKey === true) validWords++
-//             }
-//         }
-//         results.push(validWords)
-//     }
-//     return results
-// }
+function numKeypadSolutions(wordlist, keypads) {
+    let results = []
+    for (let keypad of keypads) {
+        let obj = {}
+        let validWords = 0
+        let keyLetter = keypad[0]
+        for (let letter of keypad) {
+            obj[letter] = true
+        }
+        for (let word of wordlist) {
+            let includesKey = false
+            for (let i = 0; i < word.length; i++) {
+                if (!obj[word[i]]) break;
+                if (word[i] === keyLetter) includesKey = true;
+                if (i === word.length - 1 && includesKey === true) validWords++
+            }
+        }
+        results.push(validWords)
+    }
+    return results
+}
 
 //CLEAN VERSION, ADD COMMENTS TO EXPLAIN
 function numKeypadSolutions(wordlist, keypads) {
