@@ -40,12 +40,22 @@
 
 function merge(A, B) {
     let i = 0, j = 0, results = []
-    while (i < A.length && j < B.length) {
-        (A[i] < B[j]) ? (results.push(A[i]), i++) : (results.push(B[j]), j++)
-    }
+    while (i < A.length && j < B.length) (A[i] < B[j]) ? (results.push(A[i]), i++) : (results.push(B[j]), j++)
     return results.concat(A.slice(i)).concat(B.slice(j))
 }
 
 
 merge([1, 2, 7, 25], [0, 3, 4, 6, 8, 9, 10, 12, 24])
 
+//THE SORTING PART!
+//RECURSION:
+
+function mergeSort(A) {
+    let mid = Math.floor(A.length / 2)
+    let leftSide = A.slice(0, mid)
+    let rightSide = A.slice(mid)
+    if (leftSide.length <= 1 && rightSide.length <= 1) return merge(leftSide, rightSide)
+    else return merge(mergeSort(leftSide), mergeSort(rightSide))
+}
+
+console.log(mergeSort([100, 54, 234, 6, 78, 13, 10]))
