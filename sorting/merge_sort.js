@@ -51,11 +51,11 @@ merge([1, 2, 7, 25], [0, 3, 4, 6, 8, 9, 10, 12, 24])
 //RECURSION:
 
 function mergeSort(A) {
-    let mid = Math.floor(A.length / 2)
-    let leftSide = A.slice(0, mid)
-    let rightSide = A.slice(mid)
-    if (leftSide.length <= 1 && rightSide.length <= 1) return merge(leftSide, rightSide)
-    else return merge(mergeSort(leftSide), mergeSort(rightSide))
+    if (A.length <= 1) return A
+
+    let mid = Math.floor(A.length / 2), leftSide = A.slice(0, mid), rightSide = A.slice(mid)
+
+    return merge(mergeSort(leftSide), mergeSort(rightSide))
 }
 
 console.log(mergeSort([100, 54, 234, 6, 78, 13, 10]))
