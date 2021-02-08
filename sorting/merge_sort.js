@@ -19,21 +19,30 @@
 
 //USING COUNTERS:
 
+// function merge(A, B) {
+//     let results = []
+//     let i = 0
+//     let j = 0
+//     console.log(j)
+//     while (i < A.length && j < B.length) {
+//         if (A[i] < B[j]) {
+//             results.push(A[i])
+//             i++
+//         } else {
+//             results.push(B[j])
+//             j++
+//         }
+//     }
+//     console.log(results.concat(A.slice(i)).concat(B.slice(j)))
+//     return results.concat(A.slice(i)).concat(B.slice(j))
+// }
+
+
 function merge(A, B) {
-    let results = []
-    let i = 0
-    let j = 0
-    console.log(j)
+    let i = 0, j = 0, results = []
     while (i < A.length && j < B.length) {
-        if (A[i] < B[j]) {
-            results.push(A[i])
-            i++
-        } else {
-            results.push(B[j])
-            j++
-        }
+        (A[i] < B[j]) ? (results.push(A[i]), i++) : (results.push(B[j]), j++)
     }
-    console.log(results.concat(A.slice(i)).concat(B.slice(j)))
     return results.concat(A.slice(i)).concat(B.slice(j))
 }
 
