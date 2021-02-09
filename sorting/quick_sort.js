@@ -28,3 +28,16 @@
     }
 
     pivotHelper([69, 1, 72, 55, 90, 26, 13])
+
+    //QUICKSORT PSEUDOCODE
+    //call pivotHelper on the array
+    //when that returns the updated pivot index, recursively call the pivot helper
+    //on the subarray to the left and the subarray to the right of that index
+    //base case occurs when you consider a subarray with less than 2 elements
+
+    function quickSort(arr) {
+        let pivot = pivotHelper(arr)
+        pivotHelper(arr, 0, pivot - 1)
+        pivotHelper(arr, pivot + 1)
+        
+    }
