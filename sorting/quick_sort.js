@@ -10,10 +10,12 @@
     // puts it at the beginning, and puts pivot directly after all elements smaller than itself)
     //RETURN the pivot index
 
+    //IMPORTANT - pivot counter needs to = start, loop needs to begin at start + 1
+
     function pivotHelper(arr, start = 0, end = arr.length - 1) {
         let pivot = arr[start]
-        let pivotCounter = 0
-        for (let i = 0; i < arr.length; i++) {
+        let pivotCounter = start
+        for (let i = start + 1; i < arr.length; i++) {
             if (pivot > arr[i]) {
                 pivotCounter++
                 [arr[i], arr[pivotCounter]] = [arr[pivotCounter], arr[i]]
