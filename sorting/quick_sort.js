@@ -8,5 +8,6 @@
         //if pivot is greater than the current element, increment the pivot index counter, and swap current element with the element AT THE PIVOT INDEX COUNTER
     //swap the starting element (ie pivot) with the pivot index (this takes the final element that is known to be smaller than the pivot, 
     // puts it at the beginning, and puts pivot directly after all elements smaller than itself)
+    //RETURN the pivot index
 
     
