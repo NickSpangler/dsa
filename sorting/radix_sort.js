@@ -9,15 +9,26 @@
 //HELPER METHODS
     //GET DIGIT
 
-function getDigit(num, place) {
-    let string = num.toString()
-    if (place >= string.length) return 0
-    let digit = place === 0 ? string[string.length -1] : string[string.length - 1 - place]
-    return parseInt(digit)
+// function getDigit(num, place) {
+//     let string = num.toString()
+//     if (place >= string.length) return 0
+//     let digit = place === 0 ? string[string.length -1] : string[string.length - 1 - place]
+//     return parseInt(digit)
+// }
+
+// function getDigitMath(num, place) {
+//     return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10
+// }
+
+const getDigit = (num, place) => Math.floor(Math.abs(num) / Math.pow(10, place)) % 10
+
+// DIGIT COUNT
+
+function digitCount(num) {
+    if (num === 0) return 1
+    return Math.floor(Math.log10(Math.abs(num))) + 1
 }
 
-console.log(getDigit(1234, 0))
-console.log(getDigit(51, 1))
-console.log(getDigit(1234, 2))
-console.log(getDigit(1234, 3))
-console.log(getDigit(1234, 6))
+function maxDigits(arr) {
+    return Math.max(...arr.map(i => digitCount(i)))
+}
