@@ -1,3 +1,4 @@
+//HELPERS TO MEMORIZE
 const getDigit = (num, i) => Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
 
 function digitCount(num) {
@@ -7,6 +8,7 @@ function digitCount(num) {
 
 const maxDigits = (arr) => Math.max(...arr.map(num => digitCount(num)))
 
+//RADIX SORT FUNCTION
 function radixSort(nums) {
     let max = maxDigits(nums)
     for (let i = 0; i < max; i++) {
