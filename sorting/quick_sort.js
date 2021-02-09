@@ -22,12 +22,12 @@
             }
         }
         [arr[start], arr[pivotCounter]] = [arr[pivotCounter], arr[start]]
-        console.log(arr)
-        console.log(`Counter: ${pivotCounter}`)
+        // console.log(arr)
+        // console.log(`Counter: ${pivotCounter}`)
         return pivotCounter
     }
 
-    pivotHelper([69, 1, 72, 55, 90, 26, 13])
+    quickSort([69, 1, 72, 55, 90, 26, 13, -2])
 
     //QUICKSORT PSEUDOCODE
     //call pivotHelper on the array
@@ -35,9 +35,12 @@
     //on the subarray to the left and the subarray to the right of that index
     //base case occurs when you consider a subarray with less than 2 elements
 
-    function quickSort(arr) {
-        let pivot = pivotHelper(arr)
-        pivotHelper(arr, 0, pivot - 1)
-        pivotHelper(arr, pivot + 1)
-        
+    function quickSort(arr, left = 0, right = arr.length - 1) {
+        if (left < right) {
+            let pivot = pivotHelper(arr, left, right)
+            quickSort(arr, left, pivot - 1)
+            quickSort(arr, pivot + 1, right)
+        }
+        console.log(arr)
+        return arr;
     }
