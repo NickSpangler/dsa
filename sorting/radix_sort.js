@@ -32,3 +32,27 @@ function digitCount(num) {
 function maxDigits(arr) {
     return Math.max(...arr.map(i => digitCount(i)))
 }
+
+//RADIX SORT PSEUDOCODE
+    //takes an array of numbers
+    //find how many max digits there are
+    //loop from 0 to max digits
+        //create buckets, 0 - 9 (array of empty arrays) (use index for what bucket it is)
+        //place number into corresponding bucket based on kth digit
+    //replace our existing array with values in buckets
+    //return list at end
+
+function radixSort(arr) {
+    let max = maxDigits(arr)
+    for(let i = 0; i < max; i++) {
+        let buckets = Array.from({length: 10}, () => [])
+        for (let j = 0; j < arr.length; j++) {
+            let digit = getDigit(arr[j], i)
+            buckets[digit].push(arr[j])
+        }
+        arr = buckets.flat()
+    }
+    return arr
+}
+
+console.log(radixSort([23, 1, 5, 200, 0, 9, 100]))
