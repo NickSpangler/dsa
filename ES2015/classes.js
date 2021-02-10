@@ -36,3 +36,10 @@ let nick = new Person("Nick", "Spangler")
 
 //Instance methods
     //functionality that pertains to a specific INSTANCE of a class
+
+//Class methods
+    //not as common for our data structures
+    //use static keyword to define a static method
+    //can't be called on an instance
+    //provides utility functions for an application
+
