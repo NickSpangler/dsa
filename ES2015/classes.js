@@ -8,6 +8,7 @@ class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.tardies =  0
+        this.scores = []
     }
 
     //instance method
@@ -18,6 +19,16 @@ class Person {
     markLate(){
         this.tardies++
         return `${this.fullName()} has been late ${this.tardies} times.`
+    }
+
+    addScore(score){
+        this.scores.push(score)
+        return this.scores
+    }
+
+    averageScore(){
+        let sum = this.scores.reduce(function(a,b){return a+b})
+        return sum / this.scores.length
     }
 }
 
