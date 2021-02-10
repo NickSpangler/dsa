@@ -18,13 +18,13 @@ class SinglyLinkedList {
         //else set the next property on the tail to be the new node, and set the tail property on the list to the 
         //newly created node
         //increment length by one
-        let node = new Node(val)
-        if (this.length === 0) {
-            this.head = node;
-            this.tail = node;
+        let newNode = new Node(val)
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
         } else {
-            this.tail.next = node
-            this.tail = node
+            this.tail.next = newNode
+            this.tail = newNode
         }
         this.length++
     }
