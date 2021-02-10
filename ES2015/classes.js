@@ -30,6 +30,11 @@ class Person {
         let sum = this.scores.reduce(function(a,b){return a+b})
         return sum / this.scores.length
     }
+
+    static alertPeople(...people) {
+        //send text or email to all people passed in
+        return `Everyone has been notified!`
+    }
 }
 
 let nick = new Person("Nick", "Spangler")
@@ -42,4 +47,14 @@ let nick = new Person("Nick", "Spangler")
     //use static keyword to define a static method
     //can't be called on an instance
     //provides utility functions for an application
+    //generally will be called on the ClassName, passing in instances, perhaps
 
+class DataStructure {
+    constructor(){
+        //add some properties
+    }
+
+    someInstanceMethod(){
+        //this does something to the instance it's called on
+    }
+}
