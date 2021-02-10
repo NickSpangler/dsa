@@ -7,11 +7,17 @@ class Person {
     constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.tardies =  0
     }
 
     //instance method
     fullName(){
         return `${this.firstName} ${this.lastName}`
+    }
+
+    markLate(){
+        this.tardies++
+        return `${this.fullName()} has been late ${this.tardies} times.`
     }
 }
 
