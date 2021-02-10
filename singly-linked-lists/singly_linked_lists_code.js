@@ -28,4 +28,23 @@ class SinglyLinkedList {
         }
         this.length++
     }
+
+    pop() {
+        if (this.length === 0) {
+            return undefined
+        } else if (this.head === this.tail) {
+            let oldTail = this.head
+            this.head = null
+            this.tail = null
+            this.length--
+            return oldTail
+        } else {
+            let newTail = this.head
+            while (newTail.next !== this.tail) newTail = newTail.next
+            let oldTail = newTail.next
+            this.tail = newTail
+            this.length--
+            return oldTail
+        }
+    }
 }
