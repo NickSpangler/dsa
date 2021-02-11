@@ -27,6 +27,7 @@ class SinglyLinkedList {
             this.tail = newNode
         }
         this.length++
+        return this;
     }
 
     pop() {
@@ -69,6 +70,50 @@ class SinglyLinkedList {
         }
         this.length++
         return this;
+    }
+
+    //return an item at a specific index (zero indexed)
+    get(index) {
+        if (index < 0 || index >= this.length) return null
+        let current = this.head, count = 0
+        while (count < index) {
+            current = current.next
+            count++
+        }
+        return current
+    }
+
+    //CHANGES VALUE OF NODE AT INDEX
+    set(index, val) {
+        if (!this.get(index)) return false
+        this.get(index).val = val
+        return true
+    }
+
+    //INSERTS A NEW NODE AT THE INDEX
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false
+        if (index === this.length) return this.push(val)
+        if (index === 0) return this.unshift(val);
+
+        let node = new Node(val)
+        let beforeNode = this.get(index - 1);
+        node.next = beforeNode.next;
+        beforeNode.next = node
+        this.length++
+        return true
+    }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined
+        if (index === this.length - 1) return this.pop()
+        if (index === 0) return this.shift()
+
+        let previous = this.get(index - 1)
+        let deletedNode = previous.next
+        previous.next = deletedNode.next
+        this.length--
+        return deletedNode
     }
 }
 
