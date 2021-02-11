@@ -18,4 +18,17 @@ class doublyLinkedList {
         this.tail = null
         this.length = 0
     }
+
+    push(val) {
+        node = new Node(val)
+        if (!this.head) {
+            this.head = node
+            this.tail = node
+        } else {
+            this.tail.next = node
+            node.previous = this.tail
+            this.tail = node
+        }
+        this.length++
+    }
 }
