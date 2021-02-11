@@ -34,14 +34,16 @@ class doublyLinkedList {
     }
 
     pop() {
+        //important to sever connection going both ways from the popped Node
         if (!this.head) return undefined
         let node = this.tail
         if(this.length === 1) {
             this.head = null
             this.tail = null
         } else {
-            this.tail.prev = this.tail
+            this.tail = node.prev
             this.tail.next = null
+            node.prev = null //this is an important part
         }
         this.length--
         return node
