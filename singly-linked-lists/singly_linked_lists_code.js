@@ -44,7 +44,7 @@ class SinglyLinkedList {
             this.head = null;
             this.tail = null;
         }
-        return this.current
+        return current
     }
 
     shift() {
@@ -68,7 +68,7 @@ class SinglyLinkedList {
             this.head = node
         }
         this.length++
-        return node
+        return this;
     }
 }
 
