@@ -46,6 +46,14 @@ class SinglyLinkedList {
         }
         return this.current
     }
+
+    shift() {
+        if (!this.head) return undefined;
+        let oldHead = this.head
+        this.head = oldHead.next
+        this.length--
+        return oldHead
+    }
 }
 
 let list = new SinglyLinkedList()
