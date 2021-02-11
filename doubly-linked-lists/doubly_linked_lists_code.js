@@ -80,16 +80,17 @@ class doublyLinkedList {
 
     get(index) {
         if (index < 0 || index >= this.length) return null
+        let count, current
         if (index <= this.length / 2) {
-            let count = 0
-            let current = this.head
+            count = 0
+            current = this.head
             while (count !== index) {
                 current = current.next
                 count++
             }
         } else {
-            let count = this.length - 1
-            let current = this.tail
+            count = this.length - 1
+            current = this.tail
             while (count !== index) {
                 current = current.prev
                 count--
@@ -97,6 +98,21 @@ class doublyLinkedList {
         }
         return current
     }
+
+    set(index, val) {
+        let node = this.get(index)
+        if (node) {
+            node.val = val
+            return true
+        }
+        return false
+    }
 }
 
 let list = new doublyLinkedList()
+list.push(0)
+list.push(1)
+list.push(2)
+list.push(3)
+list.push(4)
+list.push(5)
