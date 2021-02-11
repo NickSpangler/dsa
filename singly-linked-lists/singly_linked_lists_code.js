@@ -115,6 +115,31 @@ class SinglyLinkedList {
         this.length--
         return deletedNode
     }
+
+    reverse() {
+        let node = this.head //important, sets the head as your starting point in iteration later
+        this.head = this.tail
+        this.tail = node
+        let next
+        let previous = null
+        for (let i = 0; i < this.length; i++) {
+            next = node.next; //the node we're currently looking at, saving its NEXT property (going forwards)
+            node.next = previous; //whatever we have set as the previous (first iteration it is NULL)
+            previous = node //turns the current node INTO previous
+            node = next //moves our current node on to what has been saved in next
+        }
+        return this
+    }
+
+    //print is just to see the list as an array
+    print() {
+        let arr = [], current = this.head
+        while (current) {
+            arr.push(current.val);
+            current = current.next
+        }
+        console.log(arr)
+    }
 }
 
 let list = new SinglyLinkedList()
