@@ -47,3 +47,8 @@ class SinglyLinkedList {
         return this.current
     }
 }
+
+let list = new SinglyLinkedList()
+list.push("FIRST ELEMENT")
+list.push("SECOND ELEMENT")
+list.push("THIRD ELEMENT")
