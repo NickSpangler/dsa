@@ -48,6 +48,21 @@ class doublyLinkedList {
         this.length--
         return node
     }
+
+    shift() {
+        if (!this.head) return undefined
+        let node = this.head
+        if (this.length === 1) {
+            this.head = null
+            this.tail = null 
+        } else {
+            this.head = node.next
+            this.head.prev = null
+            node.next = null
+        }
+        this.length--
+        return node
+    }
 }
 
 let list = new doublyLinkedList()
