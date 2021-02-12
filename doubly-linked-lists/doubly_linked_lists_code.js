@@ -107,6 +107,12 @@ class doublyLinkedList {
         }
         return false
     }
+
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false
+        let newNode = new Node(val)
+        if (index === 0)
+    }
 }
 
 let list = new doublyLinkedList()
