@@ -112,6 +112,20 @@ class DoublyLinkedList{
         this.length--
         return removedNode
     }
+
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false
+        if (index === 0) return !!this.shift()
+        if (index === this.length - 1) return !! this.pop()
+        let newNode = new Node(val)
+        let before = this.get(index - 1)
+        let after = before.next
+
+        before.next = after, after.prev = before
+        newNode.prev = before, newNode.next = after
+        this.length++
+        return true
+    }
     
 }
 
