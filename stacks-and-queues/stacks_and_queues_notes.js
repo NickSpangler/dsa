@@ -34,5 +34,7 @@ stack.pop()
     //background tasks
     //uploading resources
     //printing / task processing
-    
+
+//can also use an ARRAY as a queue
+
 
