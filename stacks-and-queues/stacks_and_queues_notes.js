@@ -37,4 +37,15 @@ stack.pop()
 
 //can also use an ARRAY as a queue
 
+let queue = []
 
+queue.push(1)
+queue.push(2)
+queue.push(3)
+
+queue.shift()
+queue.shift()
+queue.shift()
+
+//NOT OPTIMIZED, BECAUSE YOU REINDEX EVERY TIME YOU SHIFT()
+//THIS IS TECHNICALLY A QUEUE, BUT THE ONLY WAY TO OPTIMIZE IS WITH YOUR OWN CLASS
