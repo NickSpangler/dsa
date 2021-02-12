@@ -81,6 +81,21 @@ class DoublyLinkedList{
         this.get(index).val = val
         return true
     }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined
+        if (index === 0) return this.shift()
+        if (index === this.length - 1) return this.pop()
+        let removedNode = this.get(index)
+        let before = removedNode.prev
+        let after = removedNode.next
+
+        before.next = after
+        after.prev = before
+        removedNode.prev = null, removedNode.next = null
+        this.length--
+        return removedNode
+    }
     
 }
 
