@@ -55,6 +55,26 @@ class DoublyLinkedList{
         this.length--
         return removedNode
     }
+
+    get(index) {
+        if (index < 0 || index >= this.length) return undefined
+        let current, count = 0
+        if (index <= this.length / 2) {
+            current = this.head
+            while (count !== index) {
+                current = current.next
+                count++
+            }
+        } else {
+            current = this.tail
+            count = this.length - 1
+            while (count !== index) {
+                current = current.prev
+                count--
+            }
+        }
+        return current
+    }
     
 }
 
