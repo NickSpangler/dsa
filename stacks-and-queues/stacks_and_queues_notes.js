@@ -26,3 +26,13 @@ stack.pop()
 
 //ONLY DO IT THIS WAY. DO NOT SHIFT AND UNSHIFT!!!
 
+//WHAT IS A QUEUE?
+    //FIFO data structures
+    //FIRST IN, FIRST OUT
+
+//USE CASES FOR A QUEUE
+    //background tasks
+    //uploading resources
+    //printing / task processing
+    
+
