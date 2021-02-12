@@ -75,6 +75,12 @@ class DoublyLinkedList{
         }
         return current
     }
+
+    set(index, val){
+        if (index < 0 || index >= this.length) return false
+        this.get(index).val = val
+        return true
+    }
     
 }
 
