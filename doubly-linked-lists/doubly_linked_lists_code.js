@@ -110,8 +110,8 @@ class doublyLinkedList {
 
     insert(index, val) {
         if (index < 0 || index > this.length) return false
-        if (index === 0) return !!this.unshift(val)
-        if (index === this.length) return !!this.push(val)
+        if (index === 0) return !!this.unshift(val)         //double bang returns BOOLEAN, while also performing the action it precedes
+        if (index === this.length) return !!this.push(val)  //double bang returns BOOLEAN, while also performing the action it precedes
 
         let newNode = new Node(val)
         let previous = this.get(index - 1)
