@@ -9,7 +9,7 @@ class Node{
 class DoublyLinkedList{
     constructor(){
         this.head = null;
-        this.next = null;   
+        this.tail = null;   
         this.length = 0   
     }
 
@@ -126,7 +126,40 @@ class DoublyLinkedList{
         this.length++
         return true
     }
+
+    reverse() {
+        if (this.length < 2) return this
+        let current = this.head
+        this.head = this.tail
+        this.tail = current
+        let next
+        let previous = null
+        for (let i = 0; i < this.length; i++) {
+            next = current.next
+            current.next = previous
+            current.prev = next
+            previous = current
+            current = next
+        }
+        return this
+    }
+
+    print(){
+        let array = []
+        let current = this.head, count = 0
+        while(count < this.length) {
+            array.push(current.val)
+            current = current.next
+            count++
+        }
+        console.log(array)
+    }
     
 }
 
 let list = new DoublyLinkedList()
+list.push(0)
+list.push(1)
+list.push(2)
+list.push(3)
+list.push(4)
