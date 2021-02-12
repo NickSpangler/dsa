@@ -27,7 +27,7 @@ class Stack {
             this.first = node
             node.next = first
         }
-        return this.size++
+        return ++this.size
     }
 }
 let stack = new Stack()
