@@ -96,6 +96,22 @@ class DoublyLinkedList{
         this.length--
         return removedNode
     }
+
+    pop(){
+        if (!this.head) return undefined
+        let removedNode = this.tail
+        if (this.length === 1) {
+            this.head = null
+            this.tail = null
+        } else {
+            let newTail = removedNode.prev
+            newTail.next = null
+            this.tail = newTail
+            removedNode.prev = null
+        }
+        this.length--
+        return removedNode
+    }
     
 }
 
