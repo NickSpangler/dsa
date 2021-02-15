@@ -26,16 +26,23 @@ class BST {
         }
         let current = this.root
         while (true) {
-            if (current.val < newNode.val) {
+            if (newNode.val > current.val) {
                 if (!current.right) {
                     current.right = newNode
                     return this
                 } else {
                     current = current.right
                 }
+            } else {
+                if (!current.left) {
+                    current.left = newNode
+                    return this
+                } else {
+                    current = current.left
+                } 
             }
         }
-
+        return this
     }
 }
 
