@@ -15,10 +15,18 @@
 //CHILD = A node directly connected to another node when moving away from the Root
 //PARENT = converse notion of a child
 //SIBLINGS = a group of nodes with the same parent
-//LEAFT = A node with no children
+//LEAF = A node with no children
 //EDGE = the connection between one node and another
 
 //Trees / Binary Trees / Binary Search Trees
 
+
+
 //Search Operations!
 
+//REAL WORLD APPLICATIONS
+    //HTML / DOM
+    //Network Routing
+    //Abstract Syntax Trees 
+    //Artificial Intelligence
+    //Folders, Operating System
