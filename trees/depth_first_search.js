@@ -8,12 +8,25 @@
 //Create variable to store visited nodes
 //current = this.root
 
-function dfs() {
+//dfs PRE Order
+function dfsPreOrder() {
     let visited = []
     const traverse = (node) => {
-        visited.push(node)
+        visited.push(node) //add the visited node IMMEDIATLEY, as soon as you encounter it.
         if (node.left) traverse(node.left)
         if (node.right) traverse(node.right)
+    }
+    traverse(this.root)
+    return visited
+}
+
+//def POST Order
+function dfsPostOrder() {
+    let visited = []
+    const traverse = (node) => {
+        if (node.left) traverse(node.left)
+        if (node.right) traverse(node.right)
+        visited.push(node) //this is the line that changes, explore DEEP first, then add the node at the END of the process
     }
     traverse(this.root)
     return visited

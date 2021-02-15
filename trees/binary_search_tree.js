@@ -107,12 +107,23 @@ class BST {
         return visited
     }
 
-    dfs() {
+    dfsPreOrder() {
         let visited = []
         const traverse = (node) => {
             visited.push(node.val)
             if (node.left) traverse(node.left)
             if (node.right) traverse(node.right)
+        }
+        traverse(this.root)
+        return visited
+    }
+
+    dfsPostOrder() {
+        let visited = []
+        const traverse = (node) => {
+            if (node.left) traverse(node.left)
+            if (node.right) traverse(node.right)
+            visited.push(node.val)
         }
         traverse(this.root)
         return visited
@@ -132,4 +143,4 @@ tree.insert(19)
 //         10
 //   2            13
 //1     7               25
-//                          50
+//                  19     50
