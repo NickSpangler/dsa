@@ -94,6 +94,18 @@ class BST {
         if (!found) return false
         return current
     }
+
+    bfs() {
+        if (!this.root) return null
+        let queue = [this.root], visited= [], node;
+        while (queue.length > 0) {
+            node = queue.shift()
+            visited.push(node.val)
+            if (node.left) queue.push(node.left)
+            if (node.right) queue.push(node.right)
+        }
+        return visited
+    }
 }
 
 let tree = new BST()
