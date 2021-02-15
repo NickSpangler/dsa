@@ -10,6 +10,33 @@ class BST {
     constructor() {
         this.root = null
     }
+
+    //INSERTING a new Node
+        //create new node
+        //starting at the root
+            //check if there is a root, if not, the root is now the new node
+            //if there is, compare value
+            //if greater, check to see if right node exists, if there is, move there and and repeat, if not, this node is set as the right property
+            //if it is less, check to see if left node exists, if yes, move there and repeat, if not, add this node as left property
+    insert(val) {
+        let newNode = new Node(val)
+        if (!this.root) {
+            this.root = newNode
+            return this;
+        }
+        let current = this.root
+        while (true) {
+            if (current.val < newNode.val) {
+                if (!current.right) {
+                    current.right = newNode
+                    return this
+                } else {
+                    current = current.right
+                }
+            }
+        }
+
+    }
 }
 
 let tree = new BST()
