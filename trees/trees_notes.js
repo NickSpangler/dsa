@@ -19,7 +19,16 @@
 //EDGE = the connection between one node and another
 
 //Trees / Binary Trees / Binary Search Trees
+    //Binary Tree
+        //Can have at most two children
+        //But can have Zero, one, or two
 
+    //Binary Search Trees
+        //sorted in order
+        //contain data that can be compared / sorted
+        //every item that is less than, goes left
+        //every item that is more than, goes right
+        
 
 
 //Search Operations!
