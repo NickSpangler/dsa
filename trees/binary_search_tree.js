@@ -106,9 +106,30 @@ class BST {
         }
         return visited
     }
+
+    dfs() {
+        let visited = []
+        const traverse = (node) => {
+            visited.push(node.val)
+            if (node.left) traverse(node.left)
+            if (node.right) traverse(node.right)
+        }
+        traverse(this.root)
+        return visited
+    }
 }
 
 let tree = new BST()
 tree.insert(10)
 tree.insert(2)
 tree.insert(13)
+tree.insert(1)
+tree.insert(7)
+tree.insert(25)
+tree.insert(50)
+tree.insert(19)
+
+//         10
+//   2            13
+//1     7               25
+//                          50

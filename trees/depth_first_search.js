@@ -9,13 +9,12 @@
 //current = this.root
 
 function dfs() {
-    let visited = [], current = this.root
-
+    let visited = []
     const traverse = (node) => {
         visited.push(node)
         if (node.left) traverse(node.left)
         if (node.right) traverse(node.right)
     }
-    traverse(current)
+    traverse(this.root)
     return visited
 }
