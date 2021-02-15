@@ -8,14 +8,14 @@
     //if there is a right property, push to queue
 //return the variable that stores the values
 
-bfs {
-    if (!this.root) return null
-    let queue = [this.root], visited= []
-    while (queue.length > 0) {
-        let node = queue.shift()
-        if (node.left) queue.push(node.left)
-        if (node.right) queue.push(node.right)
-        visited.push(node.val)
-    }
-    return visited
-}
+// bfs() {
+//     if (!this.root) return null
+//     let queue = [this.root], visited= []
+//     while (queue.length > 0) {
+//         let node = queue.shift()
+//         if (node.left) queue.push(node.left)
+//         if (node.right) queue.push(node.right)
+//         visited.push(node.val)
+//     }
+//     return visited
+// }
