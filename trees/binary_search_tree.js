@@ -70,21 +70,29 @@ class BST {
         }
     }
 
-    //FIND
-
-    find(val) {
+    //.contains() returns TRUE or FALSE if value is in the tree
+    contains(val) {
         if (!this.root) return false;
         let current = this.root
-        while(true) {
-            if (current.val === val) return true;
-            if (val < current.val) {
-                if (!current.left) return false
-                else current = current.left
-            } else {
-                if (!current.rigth) return false;
-                else current = current.right
-            }
+        while(current) {
+            if (val < current.val) current = current.left;
+            else if (val > current.val) current = current.right
+            else return true
         }
+        return false
+    }
+
+    //.find() returns actual node with value, or false
+    find(val) {
+        if (!this.root) return false;
+        let current = this.root, found = false
+        while(current && !found) {
+            if (val < current.val) current = current.left
+            else if (val > current.val) current = current.right
+            else found = true
+        }
+        if (!found) return false
+        return current
     }
 }
 
