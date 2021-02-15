@@ -128,6 +128,17 @@ class BST {
         traverse(this.root)
         return visited
     }
+
+    dfsInOrder() {
+        let results = []
+        const traverse = (node) => {
+            if (node.left) traverse(node.left);
+            results.push(node.val)
+            if (node.right) traverse(node.right)
+        }
+        traverse(this.root)
+        return results
+    }
 }
 
 let tree = new BST()

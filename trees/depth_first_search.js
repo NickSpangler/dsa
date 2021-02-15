@@ -20,7 +20,7 @@ function dfsPreOrder() {
     return visited
 }
 
-//def POST Order
+//dfs POST Order
 function dfsPostOrder() {
     let visited = []
     const traverse = (node) => {
@@ -30,4 +30,15 @@ function dfsPostOrder() {
     }
     traverse(this.root)
     return visited
+}
+
+//dfs IN Order
+function dfsInOrder() {
+    let results = []
+    const traverse = (node) => {
+        if (node.left) traverse(node.left);
+        results.push(node.val)
+        if (node.right) traverse(node.right)
+    }
+    return results
 }
