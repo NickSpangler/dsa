@@ -9,7 +9,7 @@ var getDecimalValue = function(head) {
         num.push(current.val)
         current = current.next
     }
-    console.log(num.join(''))
+    return parseInt(num.join(''), 2)
 };
 
 console.log(parseInt(101, 2))
