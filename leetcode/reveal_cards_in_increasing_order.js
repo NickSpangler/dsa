@@ -13,6 +13,7 @@
 
 var deckRevealedIncreasing = function(deck) {
     deck.sort((a, b) => a-b)
+    if (deck.length <= 2) return deck
     let mid = Math.ceil(deck.length / 2)
     let smaller = deck.slice(0, mid)
     let bigger = deck.slice(mid)
@@ -27,7 +28,9 @@ var deckRevealedIncreasing = function(deck) {
         newDeck.push(smaller[i])
         bigger[i] && newDeck.push(bigger[i])
     }
+    deck.length % 2 === 0 ? newDeck.push(biggest) : newDeck.splice(newDeck.length - 1, 0, biggest)
     console.log(newDeck)
+    return newDeck
 };
 
 //highest needs to start second to last (if odd or even?)
@@ -38,3 +41,5 @@ var deckRevealedIncreasing = function(deck) {
 //add largest number at the end (if odd or even?)
 
 deckRevealedIncreasing([17,13,11,2,3,5,7])
+// deckRevealedIncreasing([1,2,3,4,5,6,7,8])
+deckRevealedIncreasing([1,2,3,4])
