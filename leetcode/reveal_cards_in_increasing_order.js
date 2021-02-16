@@ -12,7 +12,22 @@
 // The first entry in the answer is considered to be the top of the deck.
 
 var deckRevealedIncreasing = function(deck) {
-    
+    deck.sort((a, b) => a-b)
+    let mid = Math.ceil(deck.length / 2)
+    let smaller = deck.slice(0, mid)
+    let bigger = deck.slice(mid)
+    let biggest = bigger.pop()
+    bigger.reverse()
+    console.log(bigger)
+    let newDeck = []
+    console.log(deck)
+    console.log(smaller)
+    console.log(bigger)
+    for (let i = 0; i < smaller.length; i++) {
+        newDeck.push(smaller[i])
+        bigger[i] && newDeck.push(bigger[i])
+    }
+    console.log(newDeck)
 };
 
 //highest needs to start second to last (if odd or even?)
@@ -21,3 +36,5 @@ var deckRevealedIncreasing = function(deck) {
 //reverse higher half (minus highest number)
 //merge smaller and reversed higher half
 //add largest number at the end (if odd or even?)
+
+deckRevealedIncreasing([17,13,11,2,3,5,7])
