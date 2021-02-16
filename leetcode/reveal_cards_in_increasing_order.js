@@ -10,3 +10,14 @@
 // Return an ordering of the deck that would reveal the cards in increasing order.
 
 // The first entry in the answer is considered to be the top of the deck.
+
+var deckRevealedIncreasing = function(deck) {
+    
+};
+
+//highest needs to start second to last (if odd or even?)
+//order deck
+//split in half
+//reverse higher half (minus highest number)
+//merge smaller and reversed higher half
+//add largest number at the end (if odd or even?)
