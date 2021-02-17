@@ -18,3 +18,4 @@
     //For any index of an array n...
     //LEFT child is stored at 2n + 1
     //RIGHT child is stored at 2n + 2
+    //To find PARENT of a node, its index is Math.floor((n-1)/2)
