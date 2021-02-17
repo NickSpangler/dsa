@@ -20,33 +20,22 @@ class MaxBinaryHeap {
     }
 
     extractMax() {
-        let extracted = this.values.shift()
-        this.values.unshift(this.values.pop())
-        let current = 0
-
-            while (current < this.values.length) {
-                let left = this.values[current*2+1] ? current*2+1 : null
-                let right = this.values[current*2+2] ? current*2+2 : null
-                console.log(this.values[current])
-                console.log(this.values[left])
-                console.log(this.values[right])
-                if (this.values[left] > this.values[current] && this.values[right] > this.values[current]) {
-                    let maxIndex = this.values[left] > this.values[right] ? left : right
-                    [this.values[current], this.values[maxIndex]] = [this.values[maxIndex], this.values[current]]
-                    current = maxIndex
-                    console.log(this.values)
-                } else if (this.values[left] > this.values[current] || this.values[right] > this.values[current]) {
-                    let maxIndex = this.values[left] > this.values[right] ? left : right
-                    [this.values[current], this.values[maxIndex]] = [this.values[maxIndex], this.values[current]]
-                    current = maxIndex
-                } else {
-                    break
-                }
-            }
-        
+        let extracted = this.values[0]
+        let end = this.values.pop()
+        this.values[0] = end
+        this.sinkDown()
         console.log(this.values)
-        console.log(extracted)
         return extracted
+    }
+
+    sinkDown() {
+        let index = 0
+        const length = this.values.length
+        const element = this.values[0]
+        while(true) {
+            let leftIndex = 2*index+1
+            let rightIndex = 2*index+2
+        }
     }
 }
 
