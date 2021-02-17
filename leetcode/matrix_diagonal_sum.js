@@ -26,6 +26,12 @@ var diagonalSum = function(mat) {
     return sum
 };
 
-diagonalSum([[1,2,3],
-    [4,5,6],
-    [7,8,9]])
+// diagonalSum([[1,2,3],
+//     [4,5,6],
+//     [7,8,9]])
+
+let arr = Array(7).fill('a')
+console.log(arr)
+arr.push('b')
+console.log(arr)
+console.log(arr.join(''))
