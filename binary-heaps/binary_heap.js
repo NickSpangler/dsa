@@ -7,11 +7,14 @@ class MaxBinaryHeap {
     insert(val) {
         this.values.push(val)
         let currentIndex = this.values.length - 1
-        let parentIndex = Math.floor((currentIndex - 1)/2)
-        while (this.values[currentIndex] > this.values[parentIndex]) {
-            [this.values[currentIndex], this.values[parentIndex]] = [this.values[parentIndex], this.values[currentIndex]]
-            currentIndex = parentIndex
-            parentIndex = Math.floor((currentIndex - 1)/2)
+        while (currentIndex > 0) {
+            let parentIndex = Math.floor((currentIndex - 1)/2)
+            if (this.values[parentIndex] < this.values[currentIndex]) {
+                [this.values[currentIndex], this.values[parentIndex]] = [this.values[parentIndex], this.values[currentIndex]]
+                currentIndex = parentIndex
+            } else {
+                break
+            }
         }
         console.log(this.values)
     }
@@ -26,3 +29,5 @@ heap.insert(1)
 heap.insert(5)
 heap.insert(74)
 heap.insert(100)
+heap.insert(2)
+heap.insert(400)
