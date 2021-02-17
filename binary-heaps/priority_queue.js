@@ -18,5 +18,32 @@ class PriorityQueue {
         this.values = []
     }
 
-    
+    enqueue(val, priority) {
+        let node = new Node(val, priority)
+        this.values.push(node)
+        let currentIndex = this.values.length - 1
+        while(currentIndex > 0) {
+            let parentIndex = Math.floor((currentIndex - 1)/2)
+            let parent = this.values[parentIndex]
+            if (parent.priority > node.priority) {
+                [this.values[currentIndex], this.values[parentIndex]] = [this.values[parentIndex],this.values[currentIndex]]
+                currentIndex = parentIndex
+            } else {
+                break
+            }
+        }
+        console.log(this)
+        return this
+    }
+
+    dequeue() {
+        
+    }
+
 }
+
+let q = new PriorityQueue()
+q.enqueue('boo boo', 4)
+q.enqueue('needs stitches', 2)
+q.enqueue('faking it', 5)
+q.enqueue('gunshot wound', 0)
