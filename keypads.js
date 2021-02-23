@@ -38,9 +38,7 @@
 function numKeypadSolutions(wordlist, keypads) {
     let results = []
     for (let keypad of keypads) {
-        let obj = {}
-        let validWords = 0
-        let keyLetter = keypad[0]
+        let obj = {}, validWords = 0, keyLetter = keypad[0]
         for (let letter of keypad) {
             obj[letter] = true
         }
