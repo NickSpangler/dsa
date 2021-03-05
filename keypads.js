@@ -84,3 +84,31 @@ const wordList = ['APPLE', 'PLEAS', 'PLEASE']
 const keypads = ['AELWXYZ', 'AELPXYZ', 'AELPSXY', 'SAELPRT', 'XAEBKSY']
 const keypadTwo = ['AELPXYZ']
 numKeypadSolutions(wordList, keypads)
+
+
+function numKeypadSolutions(wordlist, keypads) {
+    let results = []
+    for (const keypad of keypads) {
+        let keypadSet = new Set(keypad.split('')), validWords = 0, keyLetter = keypad[0]
+        for (const word of wordlist) {
+            let wordSet = new Set(word.split('')), combined = new Set([...keypadSet, ...wordSet])
+            if (combined.size === keypadSet.size && wordSet.has(keyLetter)) validWords++
+        }
+        results.push(validWords)
+    }
+    return results
+}
+
+
+function numKeypadSolutions(wordlist, keypads) {
+    let results = [0, 0, 0, 0, 0], keyLetters = [keypads[0][0], keypads[1][0], keypads[2][0], keypads[3][0], keypads[4][0]]
+    let keypadSetArray = keypads.map(keypad => new Set(keypad.split('')))
+    for (const word of wordlist) {
+        let wordSet = new Set(word)
+        for (let i = 0; i < results.length; i++) {
+            let combined = new Set([...wordSet, ...keypadSetArray[i]])
+            if (combined.size === keypadSetArray[i].size && wordSet.has(keyLetters[i])) results[i]++
+        }
+    }
+    return results
+}
