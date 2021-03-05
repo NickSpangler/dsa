@@ -12,7 +12,7 @@ var minOperations = function(boxes) {
     for (let i = 0; i < boxes.length; i++) {
         for (let j = 0; j < boxes.length; j++) {
             if (i !== j && boxes[i] === '1') {
-                results[j] += j - i
+                results[j] += Math.abs(j - i)
             }
         }
     }
