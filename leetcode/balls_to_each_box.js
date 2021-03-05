@@ -8,8 +8,18 @@
 // Each answer[i] is calculated considering the initial state of the boxes.
 
 var minOperations = function(boxes) {
-    
-};
+    let results = Array(boxes.length).fill(0), boxArray = boxes.split('')
+    for (let i = 0; i < boxes.length; i++) {
+        for (let j = 0; j < boxes.length; j++) {
+            if (i !== j && boxArray[i] === 1) {
+                results[j] += j - i
+            }
+        }
+    }
+    console.log(results)
+}
+
+minOperations('110')
 
 //for O(n) time, iterate over the array once, incrementing the result array.
     //this means for each position [i], calculating the moves FROM that box to every other box, and incrementing those indicies of the result array
