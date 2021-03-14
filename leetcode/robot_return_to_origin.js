@@ -17,11 +17,26 @@ console.log('beep beep')
 var judgeCircle = function(moves) {
     let vert = 0, horz = 0
     for (char of moves) {
-        switch char
+        switch (char) {
+            case 'U':
+                vert++
+                break;
+            case 'D':
+                vert--
+                break;
+            case 'L':
+                horz--
+                break;
+            case 'R':
+                horz++
+                break;
+        }
     }
+    console.log('FINAL')
+    console.log(vert, horz)
 };
 
-judgeCircle("UD")
+judgeCircle("RRDD")
 
 // define two variables, vertical and horizontal, set to zero
 // iterate through String, define case statement
