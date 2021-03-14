@@ -4,5 +4,8 @@
 
 var arrayPairSum = function(nums) {
 
-    
 };
+
+// sort Array
+// sum every other Number
+// return result
