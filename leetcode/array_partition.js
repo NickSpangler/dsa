@@ -3,7 +3,8 @@
 // such that the sum of min(ai, bi) for all i is maximized. Return the maximized sum.
 
 var arrayPairSum = function(nums) {
-
+    let sorted = nums.sort((a, b) => a - b)
+    console.log(sorted)
 };
 
 // sort Array
