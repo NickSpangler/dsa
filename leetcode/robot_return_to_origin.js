@@ -12,3 +12,12 @@
 // "L" will always make it move left, etc. 
 // Also, assume that the magnitude of the robot's movement is the same for each move.
 
+console.log('beep beep')
+
+var judgeCircle = function(moves) {
+    
+};
+
+// define two variables, vertical and horizontal, set to zero
+// iterate through String, define case statement
+// if both variable are zero, return true
