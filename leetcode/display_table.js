@@ -10,10 +10,10 @@
 // Note that the customer names are not part of the table. 
 // Additionally, the rows should be sorted in numerically increasing order.
 
+//CLEAN WITH NO CONSOLE.LOGS
 var displayTable = function(orders) {
     let tables = [], foods = [], obj = {}
     for (order of orders) {
-        console.log(order)
         tables.push(order[1])
         foods.push(order[2])
 
@@ -23,32 +23,62 @@ var displayTable = function(orders) {
             obj[order[2]][order[1]] ? obj[order[2]][order[1]]++ : obj[order[2]][order[1]] = 1         
         }
     }
-    console.log(tables)
-    console.log(foods)
 
     tables = [...new Set(tables)].sort((a,b) => a - b)
-    console.log(tables)
-
     foods = [...new Set(foods)].sort()
-    console.log(foods)
-
     foods.unshift('Table')
-    console.log(foods)
-
-    console.log(obj)
 
     let results = [foods]
     for (table of tables) {
         let tableArray = [table]
         for (let i = 1; i < foods.length; i++) {
             let food = foods[i]
-            obj[food][table] ? tableArray.push(obj[food][table]) : tableArray.push(0)
+            obj[food][table] ? tableArray.push(obj[food][table].toString()) : tableArray.push('0')
         }
         results.push(tableArray)
-        console.log(tableArray)
     }
-    console.log(results)
+    return results
 };
+
+// var displayTable = function(orders) {
+//     let tables = [], foods = [], obj = {}
+//     for (order of orders) {
+//         console.log(order)
+//         tables.push(order[1])
+//         foods.push(order[2])
+
+//         if (!obj[order[2]]) {
+//             obj[order[2]] = {[order[1]]: 1}
+//         } else {
+//             obj[order[2]][order[1]] ? obj[order[2]][order[1]]++ : obj[order[2]][order[1]] = 1         
+//         }
+//     }
+//     console.log(tables)
+//     console.log(foods)
+
+//     tables = [...new Set(tables)].sort((a,b) => a - b)
+//     console.log(tables)
+
+//     foods = [...new Set(foods)].sort()
+//     console.log(foods)
+
+//     foods.unshift('Table')
+//     console.log(foods)
+
+//     console.log(obj)
+
+//     let results = [foods]
+//     for (table of tables) {
+//         let tableArray = [table]
+//         for (let i = 1; i < foods.length; i++) {
+//             let food = foods[i]
+//             obj[food][table] ? tableArray.push(obj[food][table].toString()) : tableArray.push('0')
+//         }
+//         results.push(tableArray)
+//         console.log(tableArray)
+//     }
+//     console.log(results)
+// };
 
 displayTable([["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]])
 
