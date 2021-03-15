@@ -36,6 +36,18 @@ var displayTable = function(orders) {
     console.log(foods)
 
     console.log(obj)
+
+    let results = [foods]
+    for (table of tables) {
+        let tableArray = [table]
+        for (let i = 1; i < foods.length; i++) {
+            let food = foods[i]
+            obj[food][table] ? tableArray.push(obj[food][table]) : tableArray.push(0)
+        }
+        results.push(tableArray)
+        console.log(tableArray)
+    }
+    console.log(results)
 };
 
 displayTable([["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]])
