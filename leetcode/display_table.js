@@ -11,7 +11,10 @@
 // Additionally, the rows should be sorted in numerically increasing order.
 
 var displayTable = function(orders) {
-    
+    let tables = [], foods = [], obj = {}
+    for (order of orders) {
+        console.log(order)
+    }
 };
 
 // get table numbers into Array
