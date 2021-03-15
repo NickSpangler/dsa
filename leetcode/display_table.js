@@ -21,5 +21,10 @@ get foods into Array
 alphabetize
 unshift "table"
 
+at same time, put foods into object of objects
+each food is a key, with an object as value, which has table numbers as keys, and counts as values
+
 create Map() (or object) with food as key, value is array of arrays, with table number[0] and count[1]
+
+
 
