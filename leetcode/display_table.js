@@ -14,8 +14,20 @@ var displayTable = function(orders) {
     let tables = [], foods = [], obj = {}
     for (order of orders) {
         console.log(order)
+        tables.push(order[1])
+        foods.push(order[2])
     }
+    console.log(tables)
+    console.log(foods)
+
+    tables = [...new Set(tables)].sort((a,b) => a - b)
+    console.log(tables)
+
+    foods = [...new Set(foods)]
+    console.log(foods)
 };
+
+displayTable([["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]])
 
 // get table numbers into Array
 // make uniq and sort
