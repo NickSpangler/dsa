@@ -16,6 +16,12 @@ var displayTable = function(orders) {
         console.log(order)
         tables.push(order[1])
         foods.push(order[2])
+
+        if (!obj[order[2]]) {
+            obj[order[2]] = {[order[1]]: 1}
+        } else {
+            obj[order[2]][order[1]] ? obj[order[2]][order[1]]++ : obj[order[2]][order[1]] = 1         
+        }
     }
     console.log(tables)
     console.log(foods)
@@ -23,8 +29,13 @@ var displayTable = function(orders) {
     tables = [...new Set(tables)].sort((a,b) => a - b)
     console.log(tables)
 
-    foods = [...new Set(foods)]
+    foods = [...new Set(foods)].sort()
     console.log(foods)
+
+    foods.unshift('Table')
+    console.log(foods)
+
+    console.log(obj)
 };
 
 displayTable([["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]])
