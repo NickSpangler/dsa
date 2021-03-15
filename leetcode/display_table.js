@@ -14,17 +14,18 @@ var displayTable = function(orders) {
     
 };
 
-get table numbers into Array
-make uniq and sort
+// get table numbers into Array
+// make uniq and sort
 
-get foods into Array
-alphabetize
-unshift "table"
+// get foods into Array
+// alphabetize
+// unshift "table"
 
-at same time, put foods into object of objects
-each food is a key, with an object as value, which has table numbers as keys, and counts as values
+// at same time, put foods into object of objects
+// each food is a key, with an object as value, which has table numbers as keys, and counts as values
 
-create Map() (or object) with food as key, value is array of arrays, with table number[0] and count[1]
+// iterate over table numbers Array, creating a NEW array on each iteration, and push this newly created array
+// into the results array
 
 
 
