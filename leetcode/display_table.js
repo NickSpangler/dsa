@@ -10,3 +10,16 @@
 // Note that the customer names are not part of the table. 
 // Additionally, the rows should be sorted in numerically increasing order.
 
+var displayTable = function(orders) {
+    
+};
+
+get table numbers into Array
+make uniq and sort
+
+get foods into Array
+alphabetize
+unshift "table"
+
+create Map() (or object) with food as key, value is array of arrays, with table number[0] and count[1]
+
