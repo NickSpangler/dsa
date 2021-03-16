@@ -8,8 +8,15 @@ console.log('Find me!')
 // Could you do it without extra space and in O(n) runtime?
 
 var findDuplicates = function(nums) {
-    
+    let map = {}, results = []
+    for (num of nums) {
+        map[num] ? results.push(num) : map[num] = true
+    }
+    console.log(results)
+    return results
 }; 
+
+findDuplicates([4,3,2,7,8,2,3,1])
 
 // iterate through array once
 // create keys in obj
