@@ -7,3 +7,7 @@ var uniqueOccurrences = function(arr) {
 };
 
 uniqueOccurrences([1,2,2,1,1,3])
+
+// create map
+// create array of values AND set from values
+// if same size, true, else false
