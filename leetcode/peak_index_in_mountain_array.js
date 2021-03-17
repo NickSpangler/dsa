@@ -13,3 +13,5 @@ var peakIndexInMountainArray = function(arr) {
     
 };
 
+// iterate, as soon as i is greater than i - 1 and less than i + 1, return i
+
