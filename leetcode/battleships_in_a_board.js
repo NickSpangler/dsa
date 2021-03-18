@@ -13,7 +13,12 @@ console.log('fire!')
 // - there are no adjacent battleships.
 
 var countBattleships = function(board) {
-    
+    let count = 0;
+    for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board[0].length; j++) {
+            
+        }
+    }
 };
 
 // iterate through all arrays
