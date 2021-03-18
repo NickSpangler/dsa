@@ -15,3 +15,11 @@ console.log('fire!')
 var countBattleships = function(board) {
     
 };
+
+// iterate through all arrays
+// five conditions:
+//     if current spot is an X
+//         if row above exists && if i of row above is NOT an X
+//         && if index left of i exists && index left is NOT an X
+
+// If all five of those are true, increment the count
