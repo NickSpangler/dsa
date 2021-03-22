@@ -5,8 +5,13 @@ console.log('middle')
 // If there are two middle nodes, return the second middle node.
 
 var middleNode = function(head) {
-    
-}; 
+    console.log(head.val)
+    let count = 1, current = head
+    while (current.next !== null) {
+        current = current.next
+        count++
+    }
+    console.log(count)  
 
 // find length of list
 // if odd, find Math.floor(list / 2) + 1
