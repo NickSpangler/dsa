@@ -21,6 +21,9 @@ var letterCasePermutation = function(S) {
         //this isolates non-digits -> only applies to letters
         if (!(S.charCodeAt(i) >= 48 && S.charCodeAt(i) <= 57)) {
             console.log(S[i], S.charCodeAt(i))
+            S.charAt(i).toUpperCase()
+            console.log(S)
+
         }
     }
 };
