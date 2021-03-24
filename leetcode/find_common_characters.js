@@ -7,15 +7,27 @@
 // You may return the answer in any order.
 
 var commonChars = function(A) {
-    let maps = []
+    let maps = [], results = []
     for (word of A) {
-        let map = new Map()
+        let obj = {}
         for (letter of word) {
-            map.has(letter) ? map.set(letter, map.get(letter) + 1) : map.set(letter, 1)
+            obj[letter] ? obj[letter]++ : obj[letter] = 1
         }
-        maps.push(map)
+        maps.push(obj)
     }
-    for (map of maps) console.log(map)
+    let keys = Object.keys(maps[0])
+    for (key of keys) {
+        let counts = []
+        for (let i = 0; i < maps.length; i++) {
+            maps[i][key] ? counts.push(maps[i][key]) : counts.push(0)
+        }
+        let count = Math.min(...counts)
+        while (count > 0) {
+            results.push(key)
+            count--
+        }
+    }
+    return results
 }
 
 // create map of all characters in all words
@@ -23,3 +35,4 @@ var commonChars = function(A) {
 // if all still contain a letter, push to results array AND decrease count of letter in each map
 
 commonChars(["bella","label","roller"])
+commonChars(["cool","lock","cook"])
