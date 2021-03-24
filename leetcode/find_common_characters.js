@@ -11,3 +11,7 @@ var commonChars = function(A) {
     
 };
 
+// create map of all characters in all words
+// select one and iterate, checking for same letter in all
+// if all still contain a letter, push to results array AND decrease count of letter in each map
+
