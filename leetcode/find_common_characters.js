@@ -30,6 +30,21 @@ var commonChars = function(A) {
     return results
 }
 
+// THIS IS A MUCH BETTER SOLUTION:
+// var commonChars = function(A) {
+//     const result = []
+//     const firstWordArr = [...A[0]]
+    
+//     for(const letter of firstWordArr) {
+//         if(A.every(word => word.includes(letter))) {
+//             result.push(letter)
+//             A = A.map(word => word.replace(letter, ''))
+//         }
+//     }    
+    
+//     return result
+// };
+
 // create map of all characters in all words
 // select one and iterate, checking for same letter in all
 // if all still contain a letter, push to results array AND decrease count of letter in each map
