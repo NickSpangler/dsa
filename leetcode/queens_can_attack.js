@@ -32,15 +32,20 @@ var queensAttacktheKing = function(queens, king) {
         }
     }
     //check up
-    for (let i = kingColumn - 1; i >= 0; i--) {
-        if (columns[kingColumn] && columns[kingColumn].includes(i)) {
-            results.push([i, kingColumn])
-            break
-        }
+   for (let i = kingRow - 1; i >= 0; i--) {
+       if (columns[kingColumn] && columns[kingColumn].includes(i)) {
+           results.push([i, kingColumn])
+       }
     }
     //check down
-    for (let i = kingColumn + 1; i < 8; i++) {
-        if (columns[kingColumn] && columns[kingColumn].includes(i)) {
+    // for (let i = kingColumn + 1; i < 8; i++) {
+    //     if (columns[kingColumn] && columns[kingColumn].includes(i)) {
+    //         results.push([i, kingColumn])
+    //         break
+    //     }
+    // }
+    for (let i = kingRow + 1; i < 8; i++) {
+        if (columns[kingROw] && columns[kingRow].includes(i)) {
             results.push([i, kingColumn])
             break
         }
