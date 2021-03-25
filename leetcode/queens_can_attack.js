@@ -10,3 +10,10 @@ var queensAttacktheKing = function(queens, king) {
     
 };
 
+// create map of all queens
+
+// use rows as keys, with an array of columns as the values
+
+// use columns as keys, with an array of rows as the values
+
+// search in all four directions, starting from King and moving outward
