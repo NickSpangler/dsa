@@ -45,7 +45,36 @@ var queensAttacktheKing = function(queens, king) {
             break
         }
     }
+    //check upRight
+    for (let i = kingRow - 1, j = kingColumn + 1; i >= 0 && j < 8; i--, j++) {
+        if (rows[i] && rows[i].includes(j)) {
+            results.push([i, j])
+            break
+        }
+    }
+    //check upLeft
+    for (let i = kingRow - 1, j = kingColumn - 1; i >= 0 && j >= 0; i--, j--) {
+        if (rows[i] && rows[i].includes(j)) {
+            results.push([i, j])
+            break
+        }
+    }
+    //check downLeft
+    for (let i = kingRow + 1, j = kingColumn - 1; i < 8 && j >= 0; i++, j--) {
+        if (rows[i] && rows[i].includes(j)) {
+            results.push([i, j])
+            break
+        }
+    }
+    //check downRight
+    for (let i = kingRow + 1, j = kingColumn + 1; i < 8 && j < 8; i++, j++) {
+        if (rows[i] && rows[i].includes(j)) {
+            results.push([i, j])
+            break
+        }
+    }
     console.log(results)
+    return results
 };
 
 // create map of all queens
