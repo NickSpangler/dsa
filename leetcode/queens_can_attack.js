@@ -35,21 +35,16 @@ var queensAttacktheKing = function(queens, king) {
    for (let i = kingRow - 1; i >= 0; i--) {
        if (columns[kingColumn] && columns[kingColumn].includes(i)) {
            results.push([i, kingColumn])
+           break;
        }
     }
     //check down
-    // for (let i = kingColumn + 1; i < 8; i++) {
-    //     if (columns[kingColumn] && columns[kingColumn].includes(i)) {
-    //         results.push([i, kingColumn])
-    //         break
-    //     }
-    // }
     for (let i = kingRow + 1; i < 8; i++) {
-        if (columns[kingROw] && columns[kingRow].includes(i)) {
+        if (columns[kingColumn] && columns[kingColumn].includes(i)) {
             results.push([i, kingColumn])
-            break
+            break;
         }
-    }
+     }
     //check upRight
     for (let i = kingRow - 1, j = kingColumn + 1; i >= 0 && j < 8; i--, j++) {
         if (rows[i] && rows[i].includes(j)) {
